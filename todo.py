@@ -8,3 +8,10 @@ def remove_task(task):
     global tasks
     tasks = [t for t in tasks if t['title'] != task]
     return f"Задача '{task}' удалена"
+
+def mark_done(task):
+    for t in tasks:
+        if t['title'] == task:
+            t['done'] = True
+            return f"Задача '{task}' отмечена как выполненная"
+    return f"Задача '{task}' не найдена"
