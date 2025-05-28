@@ -8,3 +8,6 @@ def remove_task(task):
     global tasks
     tasks = [t for t in tasks if t['title'] != task]
     return f"Задача '{task}' удалена"
+
+def list_tasks():
+    return [f"[{'x' if t['done'] else ' '}] {t['title']}" for t in tasks]
